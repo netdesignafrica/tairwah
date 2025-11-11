@@ -64,31 +64,31 @@ export default function HomePage() {
       <CurrentOfferings />
 
   {/* Services Preview */}
-  <section id="about" className="py-16 md:py-24 bg-[#FFF9F0]">
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-balance">
+  <section id="about" className="py-12 sm:py-16 md:py-24 bg-[#FFF9F0]">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-12">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 md:mb-6 text-balance">
               More Than an Exporter, A Bridge to Origin
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
-              <div className="relative aspect-4/3 rounded-xl overflow-hidden bg-gray-100">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto">
+              <div className="relative aspect-4/3 rounded-lg sm:rounded-xl overflow-hidden bg-gray-100">
                 <img
                   src="/hero2.jpg"
                   alt="exporter"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                     {/* The Beginning */}
-                    <div className="flex gap-4">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-orange-500">
-                        <Heart className="h-6 w-6 text-white" />
+                    <div className="flex gap-3 sm:gap-4">
+                      <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-orange-500">
+                        <Heart className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                       </div>
-                      <div>
-                        <h3 className="mb-2 text-xl font-bold">The Beginning</h3>
-                        <p className="text-muted-foreground leading-relaxed">
+                      <div className="min-w-0">
+                        <h3 className="mb-1 sm:mb-2 text-base sm:text-lg md:text-xl font-bold">The Beginning</h3>
+                        <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">
                           Taiwah Coffee was founded on a simple belief: that the world's finest roasters deserve direct access
                           to Kenya's most exceptional coffees, with a story they can trust.
                         </p>
@@ -96,13 +96,13 @@ export default function HomePage() {
                     </div>
 
                     {/* The Mission */}
-                    <div className="flex gap-4">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-orange-500">
-                        <Target className="h-6 w-6 text-white" />
+                    <div className="flex gap-3 sm:gap-4">
+                      <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-orange-500">
+                        <Target className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                       </div>
-                      <div>
-                        <h3 className="mb-2 text-xl font-bold">The Mission</h3>
-                        <p className="text-muted-foreground leading-relaxed">
+                      <div className="min-w-0">
+                        <h3 className="mb-1 sm:mb-2 text-base sm:text-lg md:text-xl font-bold">The Mission</h3>
+                        <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">
                           Our mission is to be that bridge. We are not just traders; we are curators and partners. We work
                           directly with cooperatives and estates in regions like Kirinyaga, Nyeri, and Embu to identify lots
                           that tell a unique story of their terroir.
@@ -111,13 +111,13 @@ export default function HomePage() {
                     </div>
 
                     {/* The Promise */}
-                    <div className="flex gap-4">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-orange-500">
-                        <Shield className="h-6 w-6 text-white" />
+                    <div className="flex gap-3 sm:gap-4">
+                      <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-orange-500">
+                        <Shield className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                       </div>
-                      <div>
-                        <h3 className="mb-2 text-xl font-bold">The Promise</h3>
-                        <p className="text-muted-foreground leading-relaxed">
+                      <div className="min-w-0">
+                        <h3 className="mb-1 sm:mb-2 text-base sm:text-lg md:text-xl font-bold">The Promise</h3>
+                        <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">
                           We handle the complexities of export logistics, licensing, and quality control, providing you with a
                           seamless supply of fully traceable, specialty-grade Kenyan coffee.
                         </p>
@@ -127,26 +127,30 @@ export default function HomePage() {
            
           </div>
 
-          <div className="mt-10 md:mt-12 bg-white rounded-2xl p-6 md:p-8 ">
-            <div className="flex items-center justify-center gap-4 mb-6">
+          <div className="mt-8 sm:mt-10 md:mt-12 bg-white rounded-lg sm:rounded-2xl p-4 sm:p-6 md:p-8">
+            <div className="flex items-center justify-center gap-4 mb-6 sm:mb-8">
               <div className="flex items-center justify-center">
-                <h1 className="text-2xl md:text-3xl font-bold">Our Team</h1>
+                <h1 className="text-xl sm:text-2xl md:text-3xl font-bold">Our Team</h1>
               </div>
             </div>
             <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 max-w-4xl mx-auto">
-              <div className="flex flex-col items-center text-center gap-4 max-w-sm">
-                <div className="bg-orange-500 rounded-full w-20 h-20 flex items-center justify-center">
-                  <h1 className="text-3xl text-white font-bold">T</h1>
+              <div className="flex flex-col items-center text-center gap-3 sm:gap-4 max-w-sm w-full">
+                <div className="bg-orange-500 rounded-full w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center shrink-0">
+                  <h1 className="text-2xl sm:text-3xl text-white font-bold">T</h1>
                 </div>
-                <h2 className="text-xl font-bold">Founder</h2>
-                <p>With a deep passion for Kenyan coffee and a commitment to ethical trade, our founder leads Tairwah's sourcing and relationship-building, ensuring every partnership is built on transparency and quality.</p>
+                <div>
+                  <h2 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">Founder</h2>
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">With a deep passion for Kenyan coffee and a commitment to ethical trade, our founder leads Tairwah's sourcing and relationship-building, ensuring every partnership is built on transparency and quality.</p>
+                </div>
               </div>
-              <div className="flex flex-col items-center text-center gap-4 max-w-sm">
-                <div className="bg-orange-500 rounded-full w-20 h-20 flex items-center justify-center">
-                  <h1 className="text-3xl text-white font-bold">Q</h1>
+              <div className="flex flex-col items-center text-center gap-3 sm:gap-4 max-w-sm w-full">
+                <div className="bg-orange-500 rounded-full w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center shrink-0">
+                  <h1 className="text-2xl sm:text-3xl text-white font-bold">Q</h1>
                 </div>
-                <h2 className="text-xl font-bold">Licensed Q-Grader</h2>
-                <p>Our quality is guaranteed by our licensed Q-Grader who meticulously evaluates every single lot we offer, ensuring each cup meets the highest standards of specialty coffee.</p>
+                <div>
+                  <h2 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">Licensed Q-Grader</h2>
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">Our quality is guaranteed by our licensed Q-Grader who meticulously evaluates every single lot we offer, ensuring each cup meets the highest standards of specialty coffee.</p>
+                </div>
               </div>
             </div>
           </div>
