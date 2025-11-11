@@ -60,19 +60,19 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-balance text-white mb-6 md:mb-8">
-              The Art of Kenyan <span className="text-orange-400">Coffee</span>
+              The Art of <span className="text-orange-400">Kenyan Coffee</span>
             </h1>
             <p className="text-lg md:text-xl text-white text-pretty mb-8 md:mb-10 leading-relaxed">
               Tairwah Coffee meticulously sources and exports the finest traceable microlots from Kenya's premier high-altitude regions, connecting discerning roasters to the heart of the savanna.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="text-base hover:bg-primary">
-                <Link href="/services">
+                <Link href="#offerings">
                   Explore Our Coffees <ArrowRight className="ml-2" size={20} />
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="text-white bg-transparent">
-                <Link href="/contact">Our Story</Link>
+                <Link href="#about">Our Story</Link>
               </Button>
             </div>
           </motion.div>

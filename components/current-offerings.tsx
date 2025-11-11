@@ -186,10 +186,26 @@ function CurrentOfferingsComponent() {
                           <p className="text-muted-foreground leading-relaxed">{offering.description}</p>
 
                           {/* CTA Button */}
-                          <Button size="lg" className="w-full bg-[#D97706] hover:bg-[#B45309] text-white">
-                            <Download className="w-5 h-5 mr-2" />
-                            Request Offer List
-                          </Button>
+                          <a
+                            href={`#contact?offering=${encodeURIComponent(offering.name)}&origin=${encodeURIComponent(offering.origin)}&cooperative=${encodeURIComponent(offering.cooperative)}&grade=${offering.grade}&score=${offering.score}&process=${offering.process}`}
+                            onClick={(e) => {
+                              e.preventDefault()
+                              // Set the URL with query params
+                              window.history.pushState({}, "", `#contact?offering=${encodeURIComponent(offering.name)}&origin=${encodeURIComponent(offering.origin)}&cooperative=${encodeURIComponent(offering.cooperative)}&grade=${offering.grade}&score=${offering.score}&process=${offering.process}`)
+                              // Dispatch custom event to contact form
+                              window.dispatchEvent(new CustomEvent('offeringSelected', { detail: { offering: offering.name, origin: offering.origin, cooperative: offering.cooperative, grade: offering.grade, score: offering.score, process: offering.process } }))
+                              // Scroll to contact section
+                              const contactSection = document.getElementById('contact')
+                              if (contactSection) {
+                                contactSection.scrollIntoView({ behavior: 'smooth' })
+                              }
+                            }}
+                          >
+                            <Button size="lg" className="w-full bg-[#D97706] hover:bg-[#B45309] text-white">
+                              <Download className="w-5 h-5 mr-2" />
+                              Request Offer List
+                            </Button>
+                          </a>
                         </div>
                       </div>
                     </div>

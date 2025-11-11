@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -16,7 +16,63 @@ export default function ContactSection() {
     phone: "",
     message: "",
   })
+  const [offeringData, setOfferingData] = useState<any>(null)
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle")
+
+  // Read URL query params and pre-fill form with offering details
+  useEffect(() => {
+    const populateFormFromParams = () => {
+      if (typeof window !== "undefined") {
+        // Parse hash URL to get query params
+        const hash = window.location.hash
+        const queryIndex = hash.indexOf("?")
+        let params = new URLSearchParams()
+        
+        if (queryIndex !== -1) {
+          params = new URLSearchParams(hash.substring(queryIndex + 1))
+        }
+        
+        const offering = params.get("offering")
+        if (offering) {
+          const data = {
+            offering: params.get("offering") || "",
+            origin: params.get("origin") || "",
+            cooperative: params.get("cooperative") || "",
+            grade: params.get("grade") || "",
+            score: params.get("score") || "",
+            process: params.get("process") || "",
+          }
+          setOfferingData(data)
+          // Pre-fill message with offering details
+          const offeringMessage = `I'm interested in the following coffee:\n\nName: ${data.offering}\nOrigin: ${data.origin}\nCooperative: ${data.cooperative}\nGrade: ${data.grade}\nScore: ${data.score}\nProcess: ${data.process}`
+          setFormData(prev => ({
+            ...prev,
+            message: offeringMessage,
+          }))
+        }
+      }
+    }
+
+    // Initial parse
+    populateFormFromParams()
+
+    // Listen for custom event from button click
+    const handleOfferingSelected = (event: any) => {
+      const { offering, origin, cooperative, grade, score, process } = event.detail
+      const offeringMessage = `I'm interested in the following coffee:\n\nName: ${offering}\nOrigin: ${origin}\nCooperative: ${cooperative}\nGrade: ${grade}\nScore: ${score}\nProcess: ${process}`
+      setFormData(prev => ({
+        ...prev,
+        message: offeringMessage,
+      }))
+      setOfferingData({ offering, origin, cooperative, grade, score, process })
+    }
+
+    window.addEventListener('offeringSelected', handleOfferingSelected)
+
+    return () => {
+      window.removeEventListener('offeringSelected', handleOfferingSelected)
+    }
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -80,7 +136,7 @@ export default function ContactSection() {
                     href="mailto:info@taiwahcoffee.com"
                     className="text-orange-500 hover:text-orange-400 transition-colors"
                   >
-                    info@taiwahcoffee.com
+                    info@tairwahcoffee.com
                   </a>
                 </div>
               </div>
@@ -152,7 +208,7 @@ export default function ContactSection() {
                   name="company"
                   type="text"
                   required
-                  placeholder="Your roastery or company"
+                  placeholder="Your cafe, roastery or company"
                   value={formData.company}
                   onChange={handleChange}
                   className="bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 focus:border-orange-500 focus:ring-orange-500"

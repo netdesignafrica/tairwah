@@ -13,7 +13,7 @@ export default function Footer() {
               <div className="bg-orange-600 p-2 rounded-full">
                 <Coffee className="w-6 h-6 text-white" />
               </div>
-              <span className="text-xl font-bold">Taiwah Coffee</span>
+              <span className="text-xl font-bold">Tairwah Coffee</span>
             </div>
             <p className="text-orange-500 font-medium mb-3">The Art of Kenyan Coffee</p>
             <p className="text-slate-400 text-sm leading-relaxed">
@@ -103,7 +103,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-slate-800 pt-8">
           <p className="text-slate-500 text-sm text-center">
-            © 2025 Taiwah Coffee. Taiwah Coffee is a trading name of Taiwah Limited. Registered in Kenya. All rights
+            © 2025 Tairwah Coffee. Tairwah Coffee is a trading name of Tairwah Limited. Registered in Kenya. All rights
             reserved.
           </p>
         </div>
