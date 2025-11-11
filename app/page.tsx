@@ -34,17 +34,6 @@ export default function HomePage() {
   
   return (
     <div className="min-h-screen">
-      {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GD1P3N81MH" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-GD1P3N81MH');`,
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
       <Navigation />
 
       {/* Hero Section */}
@@ -84,7 +73,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-gray-100">
+              <div className="relative aspect-4/3 rounded-xl overflow-hidden bg-gray-100">
                 <img
                   src="/hero2.jpg"
                   alt="exporter"
