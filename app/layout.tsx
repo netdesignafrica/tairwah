@@ -1,5 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Poppins } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
@@ -126,6 +127,7 @@ export default function RootLayout({
       <body className={`${poppins.variable} antialiased`}>
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
+        <SpeedInsights/>
       </body>
     </html>
   )
