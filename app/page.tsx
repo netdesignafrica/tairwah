@@ -34,6 +34,17 @@ export default function HomePage() {
   
   return (
     <div className="min-h-screen">
+      {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YTX0G2JHX7"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-YTX0G2JHX7');
+          `}
+        </script>
       <Navigation />
 
       {/* Hero Section */}
